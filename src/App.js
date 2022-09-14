@@ -1,11 +1,15 @@
 import Layout from "./views/Layout/Layout";
+import HomePage from "./views/HomePage/HomePage";
 import { BrowserRouter as Router } from "react-router-dom";
+import { routes } from "./routes/routes";
 
 const App = () => {
   return (
     <div>
       <Router>
-        <Layout></Layout>
+        <Layout>
+          <HomePage routes={routes} />
+        </Layout>
       </Router>
     </div>
   );

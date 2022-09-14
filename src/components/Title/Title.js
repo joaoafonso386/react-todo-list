@@ -1,8 +1,8 @@
 import Typography from "@mui/material/Typography";
 
-const Title = ({ name, size, classes }) => {
+const Title = ({ name, tag, classes }) => {
   return (
-    <Typography variante={size} classes={classes}>
+    <Typography variant={tag} classes={classes}>
       {name}
     </Typography>
   );

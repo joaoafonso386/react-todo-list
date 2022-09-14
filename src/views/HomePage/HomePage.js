@@ -6,7 +6,7 @@ const HomePage = ({ routes }) => {
   return (
     <div>
       <main>
-        <Route path={routes.HOME} {...routes.exact}>
+        <Route path={HOME.path} exact={HOME.exact}>
           <article>
             <div></div>
           </article>
@@ -15,3 +15,5 @@ const HomePage = ({ routes }) => {
     </div>
   );
 };
+
+export default HomePage;
