@@ -1,14 +1,13 @@
 import Layout from "./views/Layout/Layout";
-import HomePage from "./views/HomePage/HomePage";
+import RenderRoutes from "./routes/RenderRoutes/RenderRoutes";
 import { BrowserRouter as Router } from "react-router-dom";
-import { routes } from "./routes/routes";
 
 const App = () => {
   return (
     <div>
       <Router>
         <Layout>
-          <HomePage routes={routes} />
+          <RenderRoutes />
         </Layout>
       </Router>
     </div>
