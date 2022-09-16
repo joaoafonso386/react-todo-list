@@ -1,3 +1,4 @@
+import Pagination from "../Pagination/Pagination";
 import { useEffect, useState, memo } from "react";
 import { requestTodos } from "../../api/requests/requests";
 
@@ -28,7 +29,13 @@ const TodoList = () => {
   if (error) return <div>There has been an error</div>;
 
   return (
-    <div>{loading ? <div>Loading...</div> : <div>{mappedTodos}</div>}</div>
+    <div>
+      {loading ? (
+        <div>Loading...</div>
+      ) : (
+        <Pagination data={mappedTodos} todosPerPage={10} />
+      )}
+    </div>
   );
 };
 
