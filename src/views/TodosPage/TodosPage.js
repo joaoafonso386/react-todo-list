@@ -13,13 +13,13 @@ const TodosPage = () => {
         setTodoList(data);
         setLoading(false);
       })
-      .catch((err) => setError(true));
+      .catch((error) => setError(true));
   }, []);
 
+  if (error) return <div>There has been an error</div>;
+
   return (
-    <div>
-      <TodoList todos={todoList} loading={loading} error={error} />
-    </div>
+    <div>{loading ? <div>Loading...</div> : <TodoList todos={todoList} />}</div>
   );
 };
 

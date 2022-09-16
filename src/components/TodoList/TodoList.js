@@ -1,6 +1,6 @@
 import Pagination from "../Pagination/Pagination";
 
-const TodoList = ({ todos, loading, error }) => {
+const TodoList = ({ todos }) => {
   const mappedTodos = todos.map(({ id, text, completed }) => {
     return (
       <div key={id}>
@@ -11,15 +11,9 @@ const TodoList = ({ todos, loading, error }) => {
     );
   });
 
-  if (error) return <div>There has been an error</div>;
-
   return (
     <div>
-      {loading ? (
-        <div>Loading...</div>
-      ) : (
-        <Pagination data={mappedTodos} todosPerPage={10} />
-      )}
+      <Pagination data={mappedTodos} todosPerPage={10} />
     </div>
   );
 };
