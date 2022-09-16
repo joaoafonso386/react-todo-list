@@ -1,10 +1,11 @@
 import Menu from "../../components/Menu/Menu";
 import Title from "../../components/Title/Title";
+import { routes } from "../../routes/routes";
 
 const Layout = ({ children }) => {
   return (
     <div>
-      <Menu />
+      <Menu routes={routes} />
       <Title tag="h2" name="Welcome to this todo-list-app!" />
       {children}
     </div>
