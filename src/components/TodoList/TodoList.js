@@ -1,22 +1,7 @@
 import Pagination from "../Pagination/Pagination";
-import { useEffect, useState, memo } from "react";
-import { requestTodos } from "../../api/requests/requests";
 
-const TodoList = () => {
-  const [todoList, setTodoList] = useState([]);
-  const [error, setError] = useState(false);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    requestTodos()
-      .then((data) => {
-        setTodoList(data);
-        setLoading(false);
-      })
-      .catch((err) => setError(true));
-  }, []);
-
-  const mappedTodos = todoList.map(({ id, text, completed }) => {
+const TodoList = ({ todos, loading, error }) => {
+  const mappedTodos = todos.map(({ id, text, completed }) => {
     return (
       <div key={id}>
         <h3>{text}</h3>
@@ -39,4 +24,4 @@ const TodoList = () => {
   );
 };
 
-export default memo(TodoList);
+export default TodoList;
