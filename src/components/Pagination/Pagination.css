@@ -1,0 +1,10 @@
+.list-container {
+  margin: 0 auto;
+  display: table;
+  height: 50%;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-around;
+}

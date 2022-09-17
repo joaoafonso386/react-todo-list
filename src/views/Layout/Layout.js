@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
   return (
     <div>
       <Menu routes={routes} />
-      <Title tag="h2" name="Welcome to this todo-list-app!" />
+      <Title tag="h2" name="Welcome to this todo list app!" />
       {children}
     </div>
   );

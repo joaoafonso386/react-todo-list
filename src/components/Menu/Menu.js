@@ -44,7 +44,7 @@ const Menu = ({ routes }) => {
                   sx={{ bgcolor: "dimgray", ":hover": { bgcolor: "dimgray" } }}
                   variant="contained"
                 >
-                  Home Page
+                  {HOME.name}
                 </Button>
               </NavLink>
 
@@ -53,7 +53,7 @@ const Menu = ({ routes }) => {
                   sx={{ bgcolor: "dimgray", ":hover": { bgcolor: "dimgray" } }}
                   variant="contained"
                 >
-                  Todo List
+                  {TODOLIST.name}
                 </Button>
               </NavLink>
             </Stack>
