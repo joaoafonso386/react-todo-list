@@ -16,6 +16,7 @@ const Pagination = ({ data, todosPerPage }) => {
       <div>{paginateData()}</div>
       <div className="pagination">
         <button
+          data-testid="prev-page-button"
           type="button"
           onClick={() =>
             currentPage === FIRST_PAGE
@@ -28,6 +29,7 @@ const Pagination = ({ data, todosPerPage }) => {
         {currentPage}
         <button
           type="button"
+          data-testid="next-page-button"
           onClick={() =>
             currentPage === LAST_PAGE
               ? setCurrentPage(LAST_PAGE)
