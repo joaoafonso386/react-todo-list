@@ -30,7 +30,7 @@ it("Renders Todos by waiting for the api call", async () => {
   render(<TodosPage />);
 
   const text = await screen.findByText("Task");
-  const error = screen.queryByText("There has been an error");
+  const error = screen.queryByText("Loading...");
   expect(text).toBeInTheDocument();
   expect(error).toBeNull();
 });
