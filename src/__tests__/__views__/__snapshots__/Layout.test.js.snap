@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout Renders correctly 1`] = `
+<div>
+  <div>
+    <p>
+      <a
+        aria-current="page"
+        className="active"
+        href="/"
+        onClick={[Function]}
+        style={Object {}}
+      >
+        Home Page
+      </a>
+    </p>
+    <p>
+      <a
+        aria-current={null}
+        href="/todo-list"
+        onClick={[Function]}
+      >
+        Todo List
+      </a>
+    </p>
+  </div>
+  <h2
+    className="MuiTypography-root MuiTypography-h2 css-1sra7t5-MuiTypography-root"
+  >
+    Welcome to this todo-list-app!
+  </h2>
+</div>
+`;

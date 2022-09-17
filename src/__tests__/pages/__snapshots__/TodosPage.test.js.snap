@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Todos Page renders loading 1`] = `
-<div>
-  <div>
-    Loading...
-  </div>
-</div>
-`;
