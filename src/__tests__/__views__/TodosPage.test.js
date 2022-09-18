@@ -6,23 +6,11 @@ import MockAdapter from "axios-mock-adapter";
 
 const mock = new MockAdapter(axios);
 const url = "http://localhost:3008/api/tasks";
-const todos = [
-  {
-    id: 0,
-    text: "Task",
-    completed: true,
-  },
-  {
-    id: 1,
-    text: "Task 1",
-    completed: true,
-  },
-  {
-    id: 2,
-    text: "Task 2",
-    completed: false,
-  },
-];
+const todos = Array(100).map((todo, id) => ({
+  id,
+  text: "Task",
+  completed: true,
+}));
 
 it("Renders Todos by waiting for the api call", async () => {
   mock.onGet(url).reply(200, todos);

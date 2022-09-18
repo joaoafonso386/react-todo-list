@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom/extend-expect";
 
-const todos = Array(100).map((_, id) => ({
+const todos = Array(100).map((todo, id) => ({
   id,
   text: "Task",
   completed: true,
