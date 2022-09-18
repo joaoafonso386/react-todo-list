@@ -1,5 +1,4 @@
 import "@testing-library/jest-dom";
-import renderer from "react-test-renderer";
 import TodosPage from "../../views/TodosPage/TodosPage";
 import { render, screen } from "@testing-library/react";
 import axios from "axios";

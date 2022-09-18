@@ -6,7 +6,7 @@ import { Router } from "react-router-dom";
 import RenderRoutes from "../../routes/RenderRoutes/RenderRoutes";
 import Layout from "../../views/Layout/Layout";
 
-test("Test if app renders routes correctly and changes page on user click", async () => {
+test("App renders routes correctly and changes page on user click", async () => {
   const history = createMemoryHistory();
   render(
     <Router history={history}>

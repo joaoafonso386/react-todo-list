@@ -3,23 +3,11 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom/extend-expect";
 
-const todos = [
-  {
-    id: 0,
-    text: "Task",
-    completed: true,
-  },
-  {
-    id: 1,
-    text: "Task 1",
-    completed: true,
-  },
-  {
-    id: 2,
-    text: "Task 2",
-    completed: false,
-  },
-];
+const todos = Array(100).map((_, id) => ({
+  id,
+  text: "Task",
+  completed: true,
+}));
 
 const mappedTodos = todos.map(({ id, text, completed }) => {
   return (
@@ -31,24 +19,18 @@ const mappedTodos = todos.map(({ id, text, completed }) => {
   );
 });
 
-it("Change to prev page on button click", async () => {
+it("Check if pagination is working on button click", async () => {
   render(<Pagination data={mappedTodos} todosPerPage={10} />);
 
   const prevPageButton = screen.getByTestId("prev-page-button");
-  const currentPage = screen.getByTestId("current-page");
-  const user = userEvent.setup();
-  await user.click(prevPageButton);
-  await user.click(prevPageButton);
-  expect(currentPage).toBeInTheDocument();
-});
-
-it("Change to next page on button click", async () => {
-  render(<Pagination data={mappedTodos} todosPerPage={10} />);
-
   const nextPageButton = screen.getByTestId("next-page-button");
   const currentPage = screen.getByTestId("current-page");
   const user = userEvent.setup();
+
+  await user.click(prevPageButton);
+  expect(currentPage.innerHTML).toBe("1");
   await user.click(nextPageButton);
-  await user.click(nextPageButton);
-  expect(currentPage).toBeInTheDocument();
+  expect(screen.getByTestId("current-page").innerHTML).toBe("2");
+  await user.click(prevPageButton);
+  expect(screen.getByTestId("current-page").innerHTML).toBe("1");
 });
