@@ -6,5 +6,8 @@
 
 .pagination {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 16px;
+  align-items: center;
 }

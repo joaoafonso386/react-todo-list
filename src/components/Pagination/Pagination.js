@@ -1,5 +1,16 @@
 import { useState } from "react";
 import "./Pagination.css";
+import { styled } from "@mui/material/styles";
+import Button from "@mui/material/Button";
+
+const CustomButton = styled(Button)({
+  color: "black",
+  border: "1px solid black",
+  "&:hover": {
+    border: "1px solid black",
+  },
+});
+
 const Pagination = ({ data, todosPerPage }) => {
   const FIRST_PAGE = 1;
   const LAST_PAGE = Math.ceil(data.length / todosPerPage);
@@ -16,7 +27,9 @@ const Pagination = ({ data, todosPerPage }) => {
       <div className="list-container">
         {paginateData()}
         <div className="pagination">
-          <button
+          <CustomButton
+            variant="outlined"
+            size="small"
             data-testid="prev-page-button"
             type="button"
             onClick={() =>
@@ -26,10 +39,12 @@ const Pagination = ({ data, todosPerPage }) => {
             }
           >
             prev
-          </button>
-          {currentPage}
-          <button
+          </CustomButton>
+          <div data-testid="current-page">{currentPage}</div>
+          <CustomButton
             type="button"
+            variant="outlined"
+            size="small"
             data-testid="next-page-button"
             onClick={() =>
               currentPage === LAST_PAGE
@@ -38,7 +53,7 @@ const Pagination = ({ data, todosPerPage }) => {
             }
           >
             next
-          </button>
+          </CustomButton>
         </div>
       </div>
     </div>

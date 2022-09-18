@@ -91,7 +91,7 @@ exports[`Layout Renders correctly 1`] = `
     </div>
   </div>
   <h4
-    className="MuiTypography-root MuiTypography-h4 MuiTypography-alignCenter css-1rprlxb-MuiTypography-root"
+    className="MuiTypography-root MuiTypography-h4 MuiTypography-alignCenter css-5uuxz8-MuiTypography-root"
   >
     Welcome to this todo list app!
   </h4>

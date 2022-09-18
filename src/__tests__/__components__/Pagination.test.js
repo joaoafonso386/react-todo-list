@@ -1,6 +1,7 @@
 import Pagination from "../../components/Pagination/Pagination";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import "@testing-library/jest-dom/extend-expect";
 
 const todos = [
   {
@@ -32,14 +33,22 @@ const mappedTodos = todos.map(({ id, text, completed }) => {
 
 it("Change to prev page on button click", async () => {
   render(<Pagination data={mappedTodos} todosPerPage={10} />);
+
   const prevPageButton = screen.getByTestId("prev-page-button");
+  const currentPage = screen.getByTestId("current-page");
   const user = userEvent.setup();
   await user.click(prevPageButton);
+  await user.click(prevPageButton);
+  expect(currentPage).toBeInTheDocument();
 });
 
 it("Change to next page on button click", async () => {
   render(<Pagination data={mappedTodos} todosPerPage={10} />);
-  const prevPageButton = screen.getByTestId("next-page-button");
+
+  const nextPageButton = screen.getByTestId("next-page-button");
+  const currentPage = screen.getByTestId("current-page");
   const user = userEvent.setup();
-  await user.click(prevPageButton);
+  await user.click(nextPageButton);
+  await user.click(nextPageButton);
+  expect(currentPage).toBeInTheDocument();
 });
