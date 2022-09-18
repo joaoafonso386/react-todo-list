@@ -12,8 +12,8 @@ describe("Layout", () => {
         </Routes>
       </BrowserRouter>
     );
-    const title = screen.queryAllByText("Welcome to this todo list app!");
-    expect(title).toHaveLength(1);
+    const title = screen.queryAllByText("Welcome to this todo list app!"); //array
+    expect(title).toHaveLength(1); //if has length its present
     expect(screen).toMatchSnapshot();
   });
 });

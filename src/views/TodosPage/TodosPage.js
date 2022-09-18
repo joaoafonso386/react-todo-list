@@ -1,4 +1,4 @@
-import { useEffect, useState, memo } from "react";
+import { useEffect, useState } from "react";
 import { requestTodos } from "../../api/requests/requests";
 import TodoList from "../../components/common/TodoList/TodoList";
 
@@ -24,4 +24,4 @@ const TodosPage = () => {
   );
 };
 
-export default memo(TodosPage);
+export default TodosPage;

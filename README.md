@@ -34,5 +34,6 @@ This project was made with React
 
 - Create an architecture that can scale:
   - components folder should hold components that are as dummy as possible
+  - it is divided into common and Layout as Layout holds components that are going to be present in ideally all pages
   - views are a collection of components to create each page of the application
-  - the api's folder holds the configuration for the api used and fu
+  - the api's folder holds the configuration for the api used and also the functions that can be used to request the api

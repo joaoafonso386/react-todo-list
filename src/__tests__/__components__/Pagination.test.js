@@ -33,5 +33,6 @@ it("Check if pagination is working on button click", async () => {
   await user.click(prevPageButton);
   expect(screen.getByTestId("current-page").innerHTML).toBe("1");
   await user.click(nextPageButton);
-  await user.click(nextPageButton); //to get to the last page
+  expect(screen.getByTestId("current-page").innerHTML).toBe("2");
+  await user.click(nextPageButton);
 });

@@ -7,6 +7,8 @@ import { Route, Routes as Switch, BrowserRouter } from "react-router-dom";
 const Router = () => {
   const { HOME, TODOLIST } = routes;
 
+  /** index makes the HomePage render to the <Outlet/> inside the layout at the "/" route */
+
   return (
     <BrowserRouter>
       <Switch>
