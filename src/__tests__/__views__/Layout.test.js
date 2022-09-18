@@ -1,14 +1,19 @@
-import renderer from "react-test-renderer";
-import Layout from "../../views/Layout/Layout";
-import { BrowserRouter as Router } from "react-router-dom";
+import "@testing-library/jest-dom";
+import { render, screen } from "@testing-library/react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Layout from "./../../components/Layout/Layout";
 
-it("Layout Renders correctly", () => {
-  const layout = renderer
-    .create(
-      <Router>
-        <Layout />
-      </Router>
-    )
-    .toJSON();
-  expect(layout).toMatchSnapshot();
+describe("Layout", () => {
+  it("Should render Layout", () => {
+    render(
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />} />
+        </Routes>
+      </BrowserRouter>
+    );
+    const title = screen.queryAllByText("Welcome to this todo list app!");
+    expect(title).toHaveLength(1);
+    expect(screen).toMatchSnapshot();
+  });
 });

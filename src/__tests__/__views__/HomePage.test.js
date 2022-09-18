@@ -1,7 +1,9 @@
-import renderer from "react-test-renderer";
+import { render, screen } from "@testing-library/react";
 import HomePage from "../../views/HomePage/HomePage";
 
-it("Home Page Renders correctly", () => {
-  const homePage = renderer.create(<HomePage />).toJSON();
-  expect(homePage).toMatchSnapshot();
+describe("Home Page", () => {
+  it("Renders correctly", () => {
+    render(<HomePage />);
+    expect(screen).toMatchSnapshot();
+  });
 });

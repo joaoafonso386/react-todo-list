@@ -1,20 +1,10 @@
 import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
 import { render, screen } from "@testing-library/react";
-import { createMemoryHistory } from "history";
-import { Router } from "react-router-dom";
-import RenderRoutes from "../../routes/RenderRoutes/RenderRoutes";
-import Layout from "../../components/Layout/Layout";
+import Router from "../../routes";
 
 test("App renders routes correctly and changes page on user click", async () => {
-  const history = createMemoryHistory();
-  render(
-    <Router history={history}>
-      <Layout>
-        <RenderRoutes />
-      </Layout>
-    </Router>
-  );
+  render(<Router />);
 
   const user = userEvent.setup();
   expect(screen.getByText("Intro")).toBeInTheDocument();
