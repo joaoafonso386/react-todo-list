@@ -1,17 +1,7 @@
-import Layout from "./views/Layout/Layout";
-import RenderRoutes from "./routes/RenderRoutes/RenderRoutes";
-import { BrowserRouter as Router } from "react-router-dom";
+import Router from "./routes";
 
 const App = () => {
-  return (
-    <div>
-      <Router>
-        <Layout>
-          <RenderRoutes />
-        </Layout>
-      </Router>
-    </div>
-  );
+  return <Router />;
 };
 
 export default App;

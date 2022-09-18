@@ -1,6 +1,6 @@
 import { useEffect, useState, memo } from "react";
 import { requestTodos } from "../../api/requests/requests";
-import TodoList from "../../components/TodoList/TodoList";
+import TodoList from "../../components/common/TodoList/TodoList";
 
 const TodosPage = () => {
   const [loading, setLoading] = useState(true);

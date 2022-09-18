@@ -4,7 +4,7 @@ import { render, screen } from "@testing-library/react";
 import { createMemoryHistory } from "history";
 import { Router } from "react-router-dom";
 import RenderRoutes from "../../routes/RenderRoutes/RenderRoutes";
-import Layout from "../../views/Layout/Layout";
+import Layout from "../../components/Layout/Layout";
 
 test("App renders routes correctly and changes page on user click", async () => {
   const history = createMemoryHistory();

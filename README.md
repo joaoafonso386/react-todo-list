@@ -2,6 +2,16 @@
 
 This project was made with React
 
+## Run the project
+
+- Clone the todos api here (https://github.com/MarceloFonseca/tasks-api/)
+
+  - Run "set PORT=3008"
+  - You can also run "set NEW_TASK_PERIOD= "\*/value you want to provide for a new task to be added in milliseconds\*/"
+  - run npm start in the tasks-api directory after that
+
+- Run "npm start" inside the react-todo-list directory
+
 ## Challenge
 
 - Should be built using (preferably) React or another similar framework
@@ -20,12 +30,9 @@ This project was made with React
   time you think you closed a task)
 - Unit tests are considered a plus but not mandatory
 
-## Run the project
+## Approach
 
-- Clone the todos api here (https://github.com/MarceloFonseca/tasks-api/)
-
-  - Run "set PORT=3008"
-  - You can also run "set NEW_TASK_PERIOD= "\*/value you want to provide for a new task to be added in milliseconds\*/"
-  - run npm start in the tasks-api directory after that
-
-- Run "npm start" inside the react-todo-list directory
+- Create an architecture that can scale:
+  - components folder should hold components that are as dummy as possible
+  - views are a collection of components to create each page of the application
+  - the api's folder holds the configuration for the api used and fu
