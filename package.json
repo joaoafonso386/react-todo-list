@@ -1,5 +1,10 @@
 {
   "name": "react-todo-list",
+  "jest": {
+    "watchPathIgnorePatterns": [
+      "<rootDir>/src/interfaces"
+    ]
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -4,7 +4,7 @@ import ListItem from "@mui/material/ListItem";
 import Typography from "@mui/material/Typography";
 import React from "react";
 import List from "@mui/material/List";
-import { ITodosList } from "src/views/TodosPage/TodosPage";
+import { ITodosList } from "../../../interfaces/TodosList.interface";
 
 interface ITodoListProps {
   todos: ITodosList[] | [];
