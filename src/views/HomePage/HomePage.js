@@ -1,4 +1,5 @@
 import Intro from "../../components/common/Intro/Intro";
+import testCoverage from "../../assets/imgs/test-coverage.png";
 import "./HomePage.css";
 
 const HomePage = () => {
@@ -7,7 +8,7 @@ const HomePage = () => {
       <main>
         <article>
           <Intro title={"Approach"}>
-            <div class="text-container">
+            <div className="text-container">
               <div>
                 <strong>Create an architecture that can scale</strong>
                 <ul>
@@ -28,7 +29,7 @@ const HomePage = () => {
                     and also the functions that can be used to request the api
                   </li>
                   <li>
-                    routing uses the client side routing provided by
+                    routing folder uses the client side routing provided by
                     react-router (v6) in this case
                   </li>
                 </ul>
@@ -38,9 +39,9 @@ const HomePage = () => {
                 <ul>
                   <li>
                     to solve the issue of having an API that adds todos every X
-                    milliseconds pagination was implemented so that the app does
-                    not have to do a massive render of the list (the infinite
-                    scrolling approach could have been also used)
+                    milliseconds, pagination was implemented so that the app
+                    does not have to do a massive render of the list (the
+                    infinite scrolling approach could have been also used)
                   </li>
                   <li>
                     usage of React.memo() in the TodosList component so that
@@ -50,18 +51,18 @@ const HomePage = () => {
               </div>
               <div>
                 <strong>Unit tests</strong>
+                The unit tests were focused on:
                 <ul>
-                  The unit tests were focused on:
                   <li>
                     snapshots - check if the layout is present && that it does
-                    not shift unexpectedly)
+                    not shift unexpectedly
                   </li>
                   <li>
                     routing - check if the routes are working as they are
                     supposed to
                   </li>
                   <li>
-                    API request - check if the request in successful (test will
+                    API request - check if the request is successful (test will
                     fail if the API is not running)
                   </li>
                   <li>
@@ -69,6 +70,12 @@ const HomePage = () => {
                     the next or previous page
                   </li>
                 </ul>
+                Coverage Report
+                <img
+                  src={testCoverage}
+                  alt=""
+                  style={{ width: "700px", margin: "15px" }}
+                />
               </div>
               <div>
                 <strong>Styling</strong>

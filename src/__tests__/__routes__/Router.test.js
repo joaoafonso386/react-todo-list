@@ -7,7 +7,7 @@ test("App renders routes correctly and changes page on user click", async () => 
   render(<Router />);
 
   const user = userEvent.setup();
-  expect(screen.getByText("Intro")).toBeInTheDocument();
+  expect(screen.getByText("Approach")).toBeInTheDocument();
 
   await user.click(screen.getByText("Todo List"));
 
