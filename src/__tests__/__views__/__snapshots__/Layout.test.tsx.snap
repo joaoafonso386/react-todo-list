@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Layout Should render Layout 1`] = `
+exports[`Layout Should render Layout with title 1`] = `
 Object {
   "debug": [Function],
   "findAllByAltText": [Function],

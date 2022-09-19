@@ -19,20 +19,22 @@ const mappedTodos = todos.map(({ id, text, completed }) => {
   );
 });
 
-it("Check if pagination is working on button click", async () => {
-  render(<Pagination data={mappedTodos} todosPerPage={5} />);
+describe("Pagination Component", () => {
+  it("Check if pagination is working on button click", async () => {
+    render(<Pagination data={mappedTodos} todosPerPage={5} />);
 
-  const prevPageButton = screen.getByTestId("prev-page-button");
-  const nextPageButton = screen.getByTestId("next-page-button");
-  const user = userEvent.setup();
+    const prevPageButton = screen.getByTestId("prev-page-button");
+    const nextPageButton = screen.getByTestId("next-page-button");
+    const user = userEvent.setup();
 
-  await user.click(prevPageButton);
-  expect(screen.getByTestId("current-page").innerHTML).toBe("1");
-  await user.click(nextPageButton);
-  expect(screen.getByTestId("current-page").innerHTML).toBe("2");
-  await user.click(prevPageButton);
-  expect(screen.getByTestId("current-page").innerHTML).toBe("1");
-  await user.click(nextPageButton);
-  expect(screen.getByTestId("current-page").innerHTML).toBe("2");
-  await user.click(nextPageButton);
+    await user.click(prevPageButton);
+    expect(screen.getByTestId("current-page").innerHTML).toBe("1");
+    await user.click(nextPageButton);
+    expect(screen.getByTestId("current-page").innerHTML).toBe("2");
+    await user.click(prevPageButton);
+    expect(screen.getByTestId("current-page").innerHTML).toBe("1");
+    await user.click(nextPageButton);
+    expect(screen.getByTestId("current-page").innerHTML).toBe("2");
+    await user.click(nextPageButton);
+  });
 });

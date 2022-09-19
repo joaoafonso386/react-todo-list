@@ -14,13 +14,15 @@ const todos = Array(100)
     completed: id % 2 === 0,
   }));
 
-it("Renders Todos by waiting for the api call", async () => {
-  mock.onGet(url).reply(200, todos);
-  render(<TodosPage />);
+describe("Todos Page", () => {
+  it("Renders Todos by waiting for the api call", async () => {
+    mock.onGet(url).reply(200, todos);
+    render(<TodosPage />);
 
-  expect(screen.getByText("Loading...")).toBeInTheDocument();
+    expect(screen.getByText("Loading...")).toBeInTheDocument();
 
-  const text = await screen.findAllByTestId("completed");
-  expect(text).toHaveLength(6);
-  expect(screen.queryByText("Loading...")).toBeNull();
+    const text = await screen.findAllByTestId("completed");
+    expect(text).toHaveLength(6);
+    expect(screen.queryByText("Loading...")).toBeNull();
+  });
 });

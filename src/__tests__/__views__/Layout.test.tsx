@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "../../components/Layout/Layout";
 
 describe("Layout", () => {
-  it("Should render Layout", () => {
+  it("Should render Layout with title", () => {
     render(
       <BrowserRouter>
         <Routes>
@@ -12,8 +12,8 @@ describe("Layout", () => {
         </Routes>
       </BrowserRouter>
     );
-    const title = screen.queryAllByText("Welcome to this todo list app!"); //array
-    expect(title).toHaveLength(1); //if has length its present
+    const title = screen.queryAllByText("Welcome to this todo list app!");
+    expect(title).toHaveLength(1);
     expect(screen).toMatchSnapshot();
   });
 });
