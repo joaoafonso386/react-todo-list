@@ -45,7 +45,7 @@ This project was made using React with hooks.
   - The unit tests were focused on:
     - snapshots - check if the layout is present && that it does not shift unexpectedly
     - routing - check if the routes are working as they are supposed to
-    - API request - check if the request is successful (test will fail if the API is not running)
+    - API request - check if the request is successful
     - pagination - see if the pagination component is passing to the next or previous page
 - Styling:
   - keeping it minimal and using MUI

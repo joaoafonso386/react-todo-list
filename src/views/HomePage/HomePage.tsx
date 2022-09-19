@@ -60,10 +60,7 @@ const HomePage: React.FC = () => {
                     routing - check if the routes are working as they are
                     supposed to
                   </li>
-                  <li>
-                    API request - check if the request is successful (test will
-                    fail if the API is not running)
-                  </li>
+                  <li>API request - check if the request is successful</li>
                   <li>
                     pagination - see if the pagination component is passing to
                     the next or previous page
