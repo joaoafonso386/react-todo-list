@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./Pagination.css";
 import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
+import { ITodosList } from "../../../interfaces/TodosList.interface";
 
 interface IPagination {
   data: React.ReactElement[];
@@ -21,7 +22,7 @@ const Pagination: React.FC<IPagination> = ({ data, todosPerPage }) => {
   const LAST_PAGE = Math.ceil(data.length / todosPerPage);
   const [currentPage, setCurrentPage] = useState<number>(FIRST_PAGE);
 
-  const paginateData = () => {
+  const paginateData = (): React.ReactElement<ITodosList>[] => {
     const initialPageIndex = currentPage * todosPerPage - todosPerPage;
     const finalPageIndex = currentPage * todosPerPage;
     return data.slice(initialPageIndex, finalPageIndex);
