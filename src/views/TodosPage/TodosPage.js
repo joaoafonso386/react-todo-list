@@ -18,7 +18,11 @@ const TodosPage = () => {
       {loading ? (
         <div style={{ textAlign: "center" }}>Loading...</div>
       ) : (
-        <TodoList todos={todoList} />
+        <main>
+          <article>
+            <TodoList todos={todoList} />
+          </article>
+        </main>
       )}
     </div>
   );

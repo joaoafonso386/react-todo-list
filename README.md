@@ -1,6 +1,6 @@
 # React Todo List
 
-This project was made with React
+This project was made using React with hooks.
 
 ## Run the project
 
@@ -37,3 +37,15 @@ This project was made with React
   - it is divided into common and Layout as Layout holds components that are going to be present in ideally all pages
   - views are a collection of components to create each page of the application
   - the api's folder holds the configuration for the api used and also the functions that can be used to request the api
+  - routing uses the client side routing provided by react-router (v6) in this case
+- Performance:
+  - to solve the issue of having an API that adds todos every X milliseconds pagination was implemented so that the app does not have to do a massive render of the list (the infinite scrolling approach could have been also used)
+  - usage of React.memo() in the TodosList component so that re-renders are only made when the list updates
+- Unit tests:
+  - The unit tests were focused on:
+    - snapshots - check if the layout is present && that it does not shift unexpectedly)
+    - routing - check if the routes are working as they are supposed to
+    - API request - check if the request in successful (test will fail if the API is not running)
+    - pagination - see if the pagination component is passing to the next or previous page
+- Styling:
+  - keeping it minimal and using MUI
