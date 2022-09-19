@@ -11,5 +11,5 @@ test("App renders routes correctly and changes page on user click", async () => 
 
   await user.click(screen.getByText("Todo List"));
 
-  expect(await screen.findByText("Task")).toBeInTheDocument();
+  expect(await screen.findByText("Loading...")).toBeInTheDocument();
 });

@@ -1,8 +1,7 @@
 import Intro from "../../components/common/Intro/Intro";
-import testCoverage from "../../assets/imgs/test-coverage.png";
 import "./HomePage.css";
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
   return (
     <div>
       <main>
@@ -72,7 +71,7 @@ const HomePage = () => {
                 </ul>
                 Coverage Report
                 <img
-                  src={testCoverage}
+                  src="/assets/imgs/test-coverage.png"
                   alt=""
                   style={{ width: "700px", margin: "15px" }}
                 />

@@ -10,3 +10,4 @@ const routes = {
 };
 
 export { routes };
+export type IRoutes = typeof routes;

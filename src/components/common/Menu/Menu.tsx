@@ -5,9 +5,14 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import { NavLink } from "react-router-dom";
+import { IRoutes } from "../../../routes/routes";
 import "./Menu.css";
 
-const Menu = ({ routes }) => {
+interface IMenu {
+  routes: IRoutes;
+}
+
+const Menu: React.FC<IMenu> = ({ routes }) => {
   const { HOME, TODOLIST } = routes;
 
   return (

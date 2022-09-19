@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Layout from "./../../components/Layout/Layout";
+import Layout from "../../components/Layout/Layout";
 
 describe("Layout", () => {
   it("Should render Layout", () => {

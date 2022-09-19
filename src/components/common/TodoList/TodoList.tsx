@@ -4,8 +4,13 @@ import ListItem from "@mui/material/ListItem";
 import Typography from "@mui/material/Typography";
 import React from "react";
 import List from "@mui/material/List";
+import { ITodosList } from "src/views/TodosPage/TodosPage";
 
-const TodoList = ({ todos }) => {
+interface ITodoListProps {
+  todos: ITodosList[] | [];
+}
+
+const TodoList: React.FC<ITodoListProps> = ({ todos }) => {
   const mappedTodos = todos.map(({ id, text, completed }) => {
     return (
       <div key={id}>
@@ -26,7 +31,10 @@ const TodoList = ({ todos }) => {
                   >
                     id {id}
                   </Typography>
-                  {" - status"}: {completed ? "completed" : "not completed"}
+                  <span data-testid="completed">
+                    {" "}
+                    - status: {completed ? "completed" : "not completed"}
+                  </span>
                 </React.Fragment>
               }
             ></ListItemText>

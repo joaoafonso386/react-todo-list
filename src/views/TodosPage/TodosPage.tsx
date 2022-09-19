@@ -2,9 +2,15 @@ import { useEffect, useState } from "react";
 import { requestTodos } from "../../api/requests/requests";
 import TodoList from "../../components/common/TodoList/TodoList";
 
-const TodosPage = () => {
-  const [loading, setLoading] = useState(true);
-  const [todoList, setTodoList] = useState([]);
+export interface ITodosList {
+  id: number;
+  text: string;
+  completed: boolean;
+}
+
+const TodosPage: React.FC = () => {
+  const [loading, setLoading] = useState<boolean>(true);
+  const [todoList, setTodoList] = useState<ITodosList[] | []>([]);
 
   useEffect(() => {
     requestTodos().then((data) => {

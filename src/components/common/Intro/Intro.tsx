@@ -1,6 +1,14 @@
+import React from "react";
 import Title from "../Title/Title";
 
-const Intro = ({ title, children }) => {
+interface IIntro {
+  title: string;
+}
+
+const Intro: React.FC<React.PropsWithChildren<IIntro>> = ({
+  title,
+  children,
+}) => {
   return (
     <div>
       <Title variant="h5" name={title} />

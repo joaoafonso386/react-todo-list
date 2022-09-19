@@ -1,4 +1,4 @@
-import { api } from "../../api/api";
+import { api } from "../api";
 
 const requestTodos = async () => {
   const { data } = await api.get("/tasks");
