@@ -7,9 +7,9 @@ describe("Router Component", () => {
   it("App renders routes correctly and changes page on user click", async () => {
     render(<Router />);
 
-    const user = userEvent.setup();
     expect(screen.getByText("Approach")).toBeInTheDocument();
 
+    const user = userEvent.setup();
     await user.click(screen.getByText("Todo List"));
 
     expect(await screen.findByText("Loading...")).toBeInTheDocument();
